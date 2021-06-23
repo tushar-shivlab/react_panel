@@ -1,6 +1,10 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
+    future:{
+        removeDeprectedGapUtilities:true,
+        purgeLayersByDefault:true
+    },
     purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
     presets: [],
     darkMode: false, // or 'media' or 'class'

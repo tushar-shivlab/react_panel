@@ -21,7 +21,6 @@ const Home = () => {
                 name,
             });
             if (res.status === 200) {
-                cookies.set('name', name);
                 const { data } = res;
                 const {
                     data: { _id },
@@ -32,7 +31,7 @@ const Home = () => {
                 history.push('/game');
             }
         } catch (e) {
-           console.log('error :>> ');
+            console.log('error :>> ');
         }
     }
     function click(e: any) {
@@ -42,7 +41,7 @@ const Home = () => {
             setError('please enter Name');
         } else {
             setDisabled(true);
-            history.push('/game');
+           
             callApi();
         }
     }

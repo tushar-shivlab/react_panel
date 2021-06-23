@@ -14,12 +14,12 @@ function UserList({ group, socket }) {
     }, [group]);
 
     useEffect(() => {
-        // const newarr = [];
+        const newarr = [...usergroup];
         socket.on(groupId, function (data) {
             console.log('data :>> ', data);
-            // newarr.push(data);
-            // console.log('newarr :>> ', newarr);
-            setusergroup((prev) => ({ ...prev, data }));
+            newarr.push(data);
+            console.log('newarr :>> ', newarr);
+            setusergroup(newarr);
         });
         return () => {
             socket.off(groupId);
